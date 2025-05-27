@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Papelería La 65 - Precios bajos, variedad única y servicios digitales como venta de streaming, SOAT, copias y más.">
+  <meta name="keywords" content="papelería en Manizales, servicios de papelería, venta de streaming, copias al por mayor, SOAT">
+  <meta name="author" content="Papelería La 65">
+  <title>Papelería La 65 | Más que una papelería</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(to right top, #fefefe, #e0f7fa), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-blend-mode: overlay;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+    }
+
+    .nav img {
+      height: 60px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      padding-top: 100px;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      padding: 15px 30px;
+      background-color: #00c853;
+      color: white;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00b140;
+      transform: scale(1.05);
+    }
+
+    .animated-documents {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .animated-documents span {
+      position: absolute;
+      display: block;
+      background: white;
+      border: 1px solid #ccc;
+      width: 60px;
+      height: 80px;
+      opacity: 0.3;
+      transform: rotate(10deg);
+      animation: floatDoc 10s linear infinite;
+    }
+
+    @keyframes floatDoc {
+      0% {
+        top: -10%;
+        transform: rotate(0deg) translateX(0);
+      }
+      100% {
+        top: 110%;
+        transform: rotate(360deg) translateX(50px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <img src="img/logo.png" alt="Logo Papelería La 65" />
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Tu aliado en cada impresión, copia y servicio digital</h1>
+      <p class="hero-description">
+        "Papelería La 65 es tu aliado confiable para lo que necesites: útiles, tecnología, trámites y más. Soluciones rápidas, precios justos y una atención que marca la diferencia."
+      </p>
+      <a href="https://wa.me/573057261290" target="_blank" style="text-decoration: none;">
+        <button class="cta-button">Contáctanos ahora</button>
+      </a>
+      
+    </div>
+    <div class="animated-documents" id="docContainer"></div>
+  </header>
+
+  <script>
+    function scrollToContact() {
+      // Aquí iría el desplazamiento suave a una sección de contacto más abajo
+      alert("Sección de contacto en desarrollo. 😉");
+    }
+
+    // Animar documentos flotando
+    const docContainer = document.getElementById("docContainer");
+    for (let i = 0; i < 10; i++) {
+      const doc = document.createElement("span");
+      doc.style.left = `${Math.random() * 100}%`;
+      doc.style.animationDuration = `${8 + Math.random() * 5}s`;
+      doc.style.opacity = Math.random() * 0.5 + 0.2;
+      docContainer.appendChild(doc);
+    }
+  </script>
+  <section id="servicios" style="background: linear-gradient(135deg, #e0f7fa, #f1f8e9); padding: 3rem 1rem;">
+
+    <!-- Portada superior -->
+    <div style="max-width: 900px; margin: auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.2);">
+      <img src="img/Porta.jpeg" alt="Portada servicios" style="width: 100%; height: auto; display: block; filter: brightness(0.95); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  
+    <h2 style="text-align: center; font-size: 2rem; color: #00796b; margin: 2rem 0 1rem;">Nuestros Servicios</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem; color: #444;">
+      Todo lo que necesitas en un solo lugar. Servicios rápidos, seguros y a precios imbatibles.
+    </p>
+  
+    <!-- Flipbook Slider -->
+    <div class="flip-slider" id="flip-slider">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Copias e Impresiones</h3>
+            <p>Desde blanco y negro: <strong>100 COP</strong>, a color: <strong>350 COP</strong>. Papel de gran calidad y excelente detalle.</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Venta de Streaming</h3>
+            <p>Netflix, Disney+, Amazon, Magis, Win+ y más. ¡Precios sin competencia en la ciudad!</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Venta de SOAT</h3>
+            <p>SOAT automotriz colombiano. Trámite rápido, seguro y confiable.</p>
+          </div>
+          <div class="flip-card-back">
+            <h3>Venta de Gadgets</h3>
+            <p>Cables, mouse, software profesional, teclados y mucho más para oficina o estudio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <style>
+      .flip-slider {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        max-width: 900px;
+        margin: auto;
+        padding: 1rem 0;
+      }
+  
+      .flip-card {
+        flex: 0 0 80%;
+        max-width: 400px;
+        height: 260px;
+        perspective: 1000px;
+        scroll-snap-align: center;
+      }
+  
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 1.2s;
+        transform-style: preserve-3d;
+        animation: autoFlip 12s infinite;
+      }
+  
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        padding: 1.5rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+  
+      .flip-card-front h3, .flip-card-back h3 {
+        color: #00695c;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+  
+      .flip-card-front p, .flip-card-back p {
+        color: #333;
+        font-size: 0.95rem;
+      }
+  
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+  
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+  
+      @keyframes autoFlip {
+        0%, 40% { transform: rotateY(0deg); }
+        50%, 90% { transform: rotateY(180deg); }
+        100% { transform: rotateY(0deg); }
+      }
+  
+      @media (max-width: 600px) {
+        .flip-card {
+          flex: 0 0 90%;
+          height: 240px;
+        }
+  
+        .flip-card-front h3, .flip-card-back h3 {
+          font-size: 1.1rem;
+        }
+  
+        .flip-card-front p, .flip-card-back p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </section>
+
+  <section id="galeria" style="background-color: #ffffff; padding: 3rem 1rem;">
+    <h2 style="text-align: center; font-size: 2rem; color: #000000; margin-bottom: 1rem;">Explora nuestra gran variedad de productos y servicios</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #444;">
+      Útiles escolares, artículos para docentes, soluciones para oficinas, universitarios y profesionales. ¡Tenemos lo que necesitas!
+    </p>
+  
+    <div class="collage-gallery">
+      <div class="gallery-grid">
+        <img src="img/pape.png" alt="Papeleria">
+        <img src="img/soat.jpg" alt="soat">
+        <img src="img/streaming.jpg" alt="Producto 3">
+        <img src="img/Shampoo.jpeg" alt="Producto 4">
+        <img src="img/cuadernos.jpeg" alt="Producto 5">
+        <img src="img/cables.jpeg" alt="Producto 6">
+        <img src="img/pendrive.jpeg" alt="Producto 7">
+        <img src="img/mouse.jpeg" alt="Producto 8">
+        <img src="img/shampootwo.jpeg" alt="Producto 9">
+        <img src="img/linterna.jpeg" alt="Producto 10">
+        <img src="img/Crallo.jpeg" alt="Producto 11">
+        <img src="img/calculadora.jpeg" alt="Producto 12">
+      </div>
+    </div>
+  
+    <style>
+      .collage-gallery {
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+      }
+  
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        animation: floatGallery 20s infinite linear;
+      }
+  
+      .gallery-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        transition: transform 0.4s ease, box-shadow 0.3s ease;
+      }
+  
+      .gallery-grid img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+  
+      @keyframes floatGallery {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+  
+      @media (max-width: 600px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 6px;
+        }
+      }
+  
+      @media (min-width: 601px) {
+        .gallery-grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+    </style>
+  </section>
+  
+  <section id="resenas" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); padding: 3rem 1rem; position: relative;">
+
+    <div class="titulo-crayola">
+      <h2>Experiencia y años de trabajo nos posicionan como la mejor papelería del sector</h2>
+    </div>
+  
+    <div class="resenas-columnas">
+      <div class="resena">
+        <img src="img/reseña1.png" alt="Reseña 1">
+      </div>
+      <div class="resena">
+        <img src="img/reseña2.png" alt="Reseña 2">
+      </div>
+      <div class="resena">
+        <img src="img/reseña3.png" alt="Reseña 3">
+      </div>
+    </div>
+  
+    <div class="frases-flotantes">
+      <p class="frase color1">Agilidad del servicio</p>
+      <p class="frase color2">Productos de calidad</p>
+      <p class="frase color3">Impresiones nítidas</p>
+      <p class="frase color4">Respuestas rápidas</p>
+      <p class="frase color5">Precios increíbles</p>
+    </div>
+  
+    <style>
+      .titulo-crayola {
+        background: repeating-linear-gradient(
+          135deg,
+          #a5d6a7,
+          #a5d6a7 20px,
+          #c8e6c9 20px,
+          #c8e6c9 40px
+        );
+        padding: 2rem 1rem;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+      }
+  
+      .titulo-crayola h2 {
+        color: #111;
+        font-size: 2.4rem;
+        font-weight: bold;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+      }
+  
+      .resenas-columnas {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+  
+      .resena {
+        border-radius: 10px;
+        overflow: hidden;
+        background: #e0f2f1;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+  
+      .resena img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+  
+      .frases-flotantes {
+        margin-top: 3rem;
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+        position: relative;
+        height: 3.5rem;
+      }
+  
+      .frase {
+        font-size: 1.8rem;
+        font-weight: bold;
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        animation: fraseAlterna 12s infinite;
+      }
+  
+      .color1 { color: #2e7d32; }
+      .color2 { color: #00897b; }
+      .color3 { color: #f9a825; }
+      .color4 { color: #c62828; }
+      .color5 { color: #1565c0; }
+  
+      .frase:nth-child(1) { animation-delay: 0s; }
+      .frase:nth-child(2) { animation-delay: 2.4s; }
+      .frase:nth-child(3) { animation-delay: 4.8s; }
+      .frase:nth-child(4) { animation-delay: 7.2s; }
+      .frase:nth-child(5) { animation-delay: 9.6s; }
+  
+      @keyframes fraseAlterna {
+        0% { opacity: 0; transform: translateY(10px); }
+        10% { opacity: 1; transform: translateY(0); }
+        30% { opacity: 1; }
+        40% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 0; }
+      }
+  
+      @media (max-width: 600px) {
+        .titulo-crayola h2 {
+          font-size: 1.7rem;
+        }
+  
+        .frase {
+          font-size: 1.2rem;
+        }
+  
+        .resenas-columnas {
+          gap: 1rem;
+        }
+      }
+    </style>
+  
+  </section>
+
+  
+  
+
+  <!-- Whatsapp flotante -->
+
+  <!-- ===== Botón flotante de WhatsApp (aparece tras 28 segundos) ===== -->
+  <a href="https://wa.me/573057261290?text=Hola%20deseo%2C%20mas%20informaciòn" class="whatsapp-float hidden"
+    target="_blank" aria-label="Contáctanos por WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp"
+      class="whatsapp-icon">
+  </a>
+
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(145deg, #00d084, #00735a);
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      box-shadow: 0 0 25px rgba(0, 255, 170, 0.4);
+      animation: signalPulse 2.5s infinite ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 255, 170, 0.6);
+    }
+
+    .whatsapp-icon {
+      width: 45px;
+      height: 45px;
+      filter: brightness(0) invert(1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes signalPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 170, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 16px rgba(0, 255, 170, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 170, 0);
+      }
+    }
+  </style>
+
+  <script>
+    // Mostrar el botón después de 28 segundos
+    setTimeout(() => {
+      document.querySelector('.whatsapp-float').classList.remove('hidden');
+    }, 4000);
+  </script>
+
+
+  <!-- end info section -->
+
+  
+</body>
+
+<footer style="background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; padding: 3rem 1rem;">
+    <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
+      
+      <!-- Dibujo animado de servicio a domicilio -->
+      <div style="flex: 1 1 300px; text-align: center;">
+        <h3 style="font-size: 1.4rem; color: #4caf50; margin-bottom: 1rem;">¡Servicio a Domicilio!</h3>
+        <p style="font-size: 0.95rem; color: #ccc;">Recibe tus productos escolares, copias, SOAT y más sin salir de casa. ¡Rápido, económico y seguro!</p>
+        <div style="margin-top: 1rem;">
+          <!-- SVG animado de entrega a domicilio -->
+          <svg width="180" height="120" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 48H56M16 48V40H48V48" stroke="#4caf50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="12" y="20" width="40" height="20" rx="2" fill="#4caf50"/>
+            <circle cx="20" cy="52" r="4" fill="#fff"/>
+            <circle cx="44" cy="52" r="4" fill="#fff"/>
+            <path d="M18 20V14C18 12.9 18.9 12 20 12H44C45.1 12 46 12.9 46 14V20" stroke="#fff" stroke-width="2"/>
+          </svg>
+        </div>
+      </div>
+  
+      <!-- Información de contacto -->
+      <div style="flex: 1 1 300px; text-align: center;">
+        <h3 style="font-size: 1.4rem; color: #fff; margin-bottom: 1rem;">Papelería La 65</h3>
+        <p style="margin: 0.5rem 0;">📍 Fátima, Manizales, Caldas</p>
+        <p style="margin: 0.5rem 0;">📞 <a href="https://wa.me/573057261290" target="_blank" style="color: #4caf50; text-decoration: none;">305 7261290</a></p>
+        <p style="margin: 0.5rem 0;">📧 <a href="mailto:papeleriala65@tuta.io" style="color: #4caf50; text-decoration: none;">papeleriala65@tuta.io</a></p>
+      </div>
+    </div>
+  
+    <hr style="margin: 2rem auto; border: none; border-top: 1px solid #444; max-width: 600px;">
+  
+    <!-- Derechos -->
+    <p style="text-align: center; font-size: 0.85rem; color: #888;">© 2025 Papelería La 65. Todos los derechos reservados.</p>
+  
+    <!-- Estilos responsivos -->
+    <style>
+      @media (max-width: 768px) {
+        footer div {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </footer>
+  
+
+</html>
+
